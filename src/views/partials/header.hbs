@@ -1,0 +1,19 @@
+
+<header id="sidebar">
+    <div class="toggle-btn" onclick="toggleSideBar()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="./blogs-list">Blogs list</a></li>
+        <li><a href="./about">Who am i?</a></li>
+        <li><a href="./contact">send me an email</a></li>
+    </ul>
+</header>
+<script>
+    function toggleSideBar(){
+  document.getElementById('sidebar').classList.toggle('active');
+}
+</script>

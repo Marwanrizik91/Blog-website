@@ -1,5 +1,7 @@
+const dbConnection = require('../database/db_connection');
+
 const readAll = cb => {
-    dbConnection.query('SELECT * all from comments', (err, res) => {
+    dbConnection.query('SELECT * from comments', (err, res) => {
         if (err)
             return err;
         else
@@ -33,3 +35,10 @@ const thirdBlogAndComments = cb => {
             cb(null, res.rows)
     })
 } 
+
+module.exports = {
+    readAll,
+    firstBlogAndComments,
+    secondBlogAndComments,
+    thirdBlogAndComments
+}

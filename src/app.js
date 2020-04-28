@@ -1,6 +1,8 @@
 const path = require('path')
 const express = require('express');
-const exphbs = require('express-handlebars')
+const exphbs = require('express-handlebars');
+const {readAll} = require('./queries/blogs');
+const comments = require('./queries/comments')
 
 const app = express();
 
@@ -19,24 +21,39 @@ app.engine(
     })
 )
 
-app.get('/', (req,res)=> {
+let data;
+readAll((err, res) => {
+    if (err)
+        return err
+    else
+        data = res
+})
+console.log(data)
+
+app.get('/', (req, res) => {
     res.render('home', {
-
+       data
     })
 })
 
-app.get('/blogs-list', (req,res)=> {
-    res.render('', {
+// app.get('/blogs-lists', (req,res)=> {
+//     res.render('', {
+//     name: "Marwan"
+//     })
+// })
 
-    })
-})
+// app.get('/comments', (req, res)=> {
+//     red.render('', {
 
-app.get('/comments', (req, res)=> {
-    red.render('', {
+//     })
+// })
 
-    })
-})
+// app.get('/about', (req, res)=> {
 
-app.get('/about', (req, res)=> {
-    
-})
+// })
+
+// app.get('/contact', (req, res)=> {
+
+// })
+
+module.exports = app;
