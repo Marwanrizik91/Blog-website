@@ -6,5 +6,5 @@ const sqlPath = path.join(__dirname, 'db_build.sql');
 const sql = fs.readFileSync(sqlPath).toString()
 
 const runDbBuild = cb => dbConnection.query(sql, cb)
-// runDbBuild();
+runDbBuild();
 module.exports = runDbBuild;

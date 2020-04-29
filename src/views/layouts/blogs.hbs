@@ -1,0 +1,18 @@
+{{> header}}
+<div>
+    {{#with result}}
+    <h1>{{this.blog_title}}</h1>
+    <h4>Author: {{this.author}}</h3>
+        <p>{{this.content}}</p>
+        {{/with}}
+</div>
+
+<form action="/add-comment" method="post">
+    <label for="fname">Name:</label>
+    <input type="text" name="commentor" placeholder="Your name?">
+    <label for="what">What you think about the blog?</label>
+    <input type="text" name="comment" placeholder="Write your comment here">
+    <input type="submit" value="submit">
+</form>
+
+<div class="comments-section"></div>

@@ -13,7 +13,7 @@ CREATE TABLE blogs (
 CREATE TABLE comments (
                         id SERIAL PRIMARY KEY,
                         blogs_id INTEGER,
-                        name VARCHAR(100) NOT NULL,
+                        commentor VARCHAR(100),
                         content TEXT NOT NULL,
                         comment_date DATE
 );
@@ -23,7 +23,7 @@ Values
       ('Test blog', 'Marwan', 'Im just a test content on this blog', '2020-04-27'),
       ('Test blog2', 'Marwan', 'Im just another test content on this blog', '2020-04-22');
 
-INSERT INTO comments (blogs_id, name, content, comment_date)
+INSERT INTO comments (blogs_id, commentor, content, comment_date)
 Values
       (1, 'James', 'Amazing content, Thank you', '2020-4-28'),
       (1, 'Jake', 'Niceeeeeeee, I like that', '2020-4-29'),

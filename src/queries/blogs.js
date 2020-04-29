@@ -8,5 +8,13 @@ const readAll = cb => {
             cb(null, res.rows)
     })
 }
+const readContent = (id, cb) => {
+    dbConnection.query(`select * from blogs where id = ${id} `, (err,res)=> {
+        if (err)
+            return err;
+        else
+            cb(null, res.rows)
+    })
+}
 
-module.exports = {readAll}
+module.exports = {readAll, readContent}
