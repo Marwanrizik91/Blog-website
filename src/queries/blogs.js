@@ -5,7 +5,6 @@ const readAll = cb => {
         if (err)
             return err;
         else
-        console.log(res.rows)
             cb(null, res.rows)
     })
 }

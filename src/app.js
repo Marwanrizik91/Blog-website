@@ -28,7 +28,7 @@ readAll((err, res) => {
     else
         data = res
 })
-console.log(data)
+
 
 app.get('/', (req, res) => {
     res.render('home', {
